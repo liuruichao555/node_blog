@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="'description" content="Touch enabled minimalistic slider written in vanilla JavaScript">
+  <meta name="viewport" content="'width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <title>Title</title>
+  <script src="/javascript/jquery-3.1.1.js"></script>
+  <script src="/javascript/bootstrap.js"></script>
+  <script src="/javascript/underscore.js"></script>
+  <script src="/javascript/backbone.js"></script>
+  <link href="/img/logo.ico" rel="icon" type="image/x-icon">
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/blogstyle.css" rel="stylesheet">
+  <link href="/css/public.css" rel="stylesheet">
+</head>
+<body>
+<section class="container-fluid">
+  <div class="row">
+    <%include ./common/leftbar.ejs %>
+    <div class="right-content col-lg-8">
+      <a class="comment-btn" id="commentBtn" onclick="comboardOpen()"><img src="/img/Comment-(alt).png " width="50"></a>
+      <div class="point-cover"><span><a href="/article/list"><img src="/img/Menu.png" width="50"></a></span></div>
+      <div class="article-mode">
+        <h2 class="article-title"><%=article[article.length-1].articleTitle%></h2>
+        <%var todayDate = new Date(today)%>
+        <%var articleDate = new Date(article[article.length-1].articleDate)%>
+        <%if (parseInt(Math.abs(todayDate.getTime()  -  articleDate.getTime())/ 1000/ 60/ 60/ 24)!=0){%>
+        <p class="article-msg"><time><%=parseInt(Math.abs(today.getTime()  -  articleDate.getTime())/ 1000/ 60/ 60/ 24)%>天前发布</time> | <%=article[0].articleClass%> | 20条评论</p>
+        <%} else if(parseInt(Math.abs(todayDate.getTime()  -  articleDate.getTime())/ 1000/ 60/ 60)!=0){%>
+        <p class="article-msg"><time><%=parseInt(Math.abs(todayDate.getTime()  -  articleDate.getTime())/ 1000/ 60/ 60)%>小时前发布</time> | <%=article[0].articleClass%> | 20条评论</p>
+        <%} else if(parseInt(Math.abs(todayDate.getTime()  -  articleDate.getTime())/ 1000/ 60)!=0){%>
+        <p class="article-msg"><time><%=parseInt(Math.abs(todayDate.getTime()  -  articleDate.getTime())/ 1000/ 60/ 60)%>分钟前发布</time> | <%=article[0].articleClass%> | 20条评论</p>
+        <%} else if(parseInt(Math.abs(todayDate.getTime()  -  articleDate.getTime())/ 1000)!=0){%>
+        <p class="article-msg"><time>刚刚发布</time> | <%=article[article.length-1].articleClass%> | 20条评论</p>
+        <%}%>
+        <article>
+          <%=article[article.length-1].articleContent%>
+          <img src="/img/6.jpg" >
+        </article>
+        <div class="flag" style="width: 200px;height: 200px; margin: 30px auto; background: #000;color: #ffffff;"> 通过二维码分享到朋友圈</div>
+        <div class="article-continue">
+          <a class="prev" style="display: none;"><span>旺仔小馒头的食用方法</span><img src="/img/Previous.png"></a>
+          <a class="next"><img src="/img/Next.png"><span><%=article[article.length-2].articleTitle%></span></a>
+        </div>
+      </div>
+      <div class="comment-board" id="comment-board">
+        <h2>来说几句</h2>
+        <a class="comment-close" id="comment-close" onclick="comboardClose();"><img src="/img/Cancel.png" ></a>
+        <textarea class="comment-input"></textarea>
+        <label></label>
+        <input type="button" class="commit-btn">
+        <ul class="comment-ul">
+          <li class="comment-li">
+            <a><span><img src="/img/1398.png" width="45"></span><b>小花花:</b></a>
+            <p>梦想总是要有的，不然人和咸鱼有什么区别，但是，要正视自己的梦想，哈哈哈哈哈，你说我说的对不对</p>
+            <div class="func-group">
+              <a class="likeit"><img src="/img/Like.png" width="20">（1）</a>
+              <a class="reply"><img src="/img/Comment.png" width="20"></a>
+              <a class="delete"><img src="/img/Trash.png" width="20"></a>
+              <time>30天前</time>
+            </div>
+            <!--<div class="reply-model" style="display: none;">-->
+              <!--<textarea class="reply-text"></textarea><a class="reply-commit"><img src="/img/Ok.png" width="40px"></a>-->
+            <!--</div>-->
+          </li>
+          <!--<li class="comment-li">-->
+            <!--<a><span><img src="/img/1398.png" width="45"></span><b>小花花:</b></a>-->
+            <!--<p>梦想总是要有的，不然人和咸鱼有什么区别，但是，要正视自己的梦想，哈哈哈哈哈，你说我说的对不对</p>-->
+            <!--<div class="func-group">-->
+              <!--<a class="likeit"><img src="/img/Like.png" width="20">（1）</a>-->
+              <!--<a class="reply"><img src="/img/Comment.png" width="20"></a>-->
+              <!--<a class="delete"><img src="/img/Trash.png" width="20"></a>-->
+              <!--<time>30天前</time>-->
+            <!--</div>-->
+            <!--<ul class="reply-ul">-->
+              <!--<li class="reply-li">-->
+                <!--<a><span><img src="/img/1398.png" width="30"></span><b>小花花:</b></a>-->
+                <!--<p>梦想总是要有的，不然人和咸鱼有什么区别，但是，要正视自己的梦想，哈哈哈哈哈，你说我说的对不对</p>-->
+                <!--<div class="func-group" style="margin-left: 250px;">-->
+                  <!--<a class="reply"><img src="/img/Comment.png" width="20"></a>-->
+                  <!--<a class="delete"><img src="/img/Trash.png" width="20"></a>-->
+                <!--</div>-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+          <!--<li class="comment-li">-->
+            <!--<a><span><img src="/img/1398.png" width="45"></span><b>小花花:</b></a>-->
+            <!--<p>梦想总是要有的，不然人和咸鱼有什么区别，但是，要正视自己的梦想，哈哈哈哈哈，你说我说的对不对</p>-->
+            <!--<div class="func-group">-->
+              <!--<a class="likeit"><img src="/img/Like.png" width="20">（1）</a>-->
+              <!--<a class="reply"><img src="/img/Comment.png" width="20"></a>-->
+              <!--<a class="delete"><img src="/img/Trash.png" width="20"></a>-->
+              <!--<time>30天前</time>-->
+            <!--</div>-->
+          <!--</li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="javascript/articleContent.js"></script>
+<script src="javascript/register.js"></script>
+<script src="javascript/login.js"></script>
+</body>
+</html>

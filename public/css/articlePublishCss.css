@@ -1,0 +1,143 @@
+.right-content {
+    background: #dbeafc;
+    float: right;
+    padding: 0 200px 30px 200px;
+    overflow: hidden;
+    /*text-align: center;*/
+    height:100%;
+}
+.articleCategories{
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    border: 2px solid #03113c;
+    background: #dbeafc;
+    margin: 70px auto 20px auto;
+    /*margin-top: 50px;*/
+    font-family: "Microsoft YaHei UI";
+    font-size: 15px;
+}
+.articleCategories option{
+    font-family: "Microsoft YaHei UI";
+    font-size: 15px;
+    border: 1px solid #03113c;
+}
+.articleTitle{
+    display: block;
+    border: 2px solid #03113c;
+    background: transparent;
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 15px auto;
+    font-size: 20px;
+    font-family: "Microsoft YaHei UI";
+    color: #03113c;
+}
+
+.addClass{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    background: url("../img/bg-2.png") ;
+    z-index:1000;
+    display: none;
+}
+.newClassDig{
+    width: 400px;
+    height: 250px;
+    background: url("../img/bg-1.png");
+    padding: 5px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.newClassDig div{
+    width: 390px;
+    height:240px;
+    background: #dbeafc;
+    padding: 20px 40px;
+    text-align: center;
+}
+.newClassDig h4{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-family:"Microsoft YaHei UI";
+    color: #03113c;
+}
+.newClassDig .className{
+    border: 2px solid #03113c;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-family:"Microsoft YaHei UI";
+    color: #03113c;
+    width: 300px;
+    margin: 20px auto;
+    padding:0 10px;
+    text-align: center;
+    background: transparent;
+}
+.newClassDig .classSubmit{
+    width: 85px;
+    height: 40px;
+    background: #03113c;
+    border: 2px solid #03113c;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family:"Microsoft YaHei UI";
+    transition: 0.1s all ease-in-out;
+}
+.classMsg h3{
+    font-family: "Microsoft YaHei UI";
+    color: #03113c;
+    font-size: 35px;
+    margin-top: 50px;
+}
+.classMsg a{
+    display: block;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    color: #ffffff;
+    background: #03113c;
+    border-radius: 5px;
+    font-family: "Microsoft YaHei UI";
+    border: 2px solid #03113c;
+    text-align: center;
+    margin: 40px auto 0 auto;
+}
+.classMsg a:hover{
+    text-decoration: none !important;
+}
+.articleCommit{
+    background: url("../img/Ok.png") center no-repeat;
+    display: block;
+    width: 46px;
+    height: 46px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    border:none;
+    transition: 0.1s all ease-in-out;
+    margin: 50px auto;
+}
+.articleCommit:hover,.articleCancel:hover{
+    box-shadow: 0 0 10px 0 #2a6496;
+}
+.articleCancel{
+    position: absolute;
+    right: 55px;
+    top: 55px;
+    transition: all 0.5s ease-in-out;
+    display: block;
+    width: 32px;
+    height:32px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+}

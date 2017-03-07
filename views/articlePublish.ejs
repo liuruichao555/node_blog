@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="'description" content="Touch enabled minimalistic slider written in vanilla JavaScript">
+    <meta name="viewport" content="'width=device-width,initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+    <script src="/javascript/jquery-3.1.1.js"></script>
+    <script src="/javascript/bootstrap.js"></script>
+    <link href="/img/logo.ico" rel="icon" type="image/x-icon">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/articlePublishCss.css" rel="stylesheet">
+    <link href="/css/public.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"> </script>
+</head>
+<body>
+<div class="addClass">
+    <div class="newClassDig">
+        <div class='classAdd'>
+            <a class="classCancel"><img src="/img/Cancel.png" ></a>
+            <h4>分类名称</h4>
+            <input type="text" class="className">
+            <input type="submit" class="classSubmit">
+        </div>
+        <div class="classMsg" style="display: none;">
+            <h3>添加失败</h3>
+            <a>确定</a>
+        </div>
+    </div>
+</div>
+<section class="container-fluid">
+    <div class="row">
+        <%include ./common/leftbar.ejs %>
+        <div class="right-content col-lg-8">
+            <a class="articleCancel" href="/article/list"><img src="/img/Cancel.png" ></a>
+            <select class="articleCategories">
+                <option value="0">选择文章分类</option>
+                <option  value="1">新建分类</option>
+            </select>
+            <input type="text" class="articleTitle">
+            <div>
+                <script id="editor" type="text/plain" style="width:100%;height:600px;"></script>
+                <a type="button" class="articleCommit"></a>
+                <!--<img src="/img/Ok.png">-->
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var ue = UE.getEditor('editor');
+</script>
+<script src="/javascript/public.js"></script>
+<script src="/javascript/articleJs.js"></script>
+<script src="/javascript/register.js"></script>
+<script src="/javascript/login.js"></script>
+
+</body>
+</html>

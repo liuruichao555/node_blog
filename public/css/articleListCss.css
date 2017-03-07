@@ -1,0 +1,101 @@
+.right-content {
+    background: #dbeafc;
+    float: right;
+    height:100%;
+    /*padding: 0 70px 30px 70px;*/
+    /*overflow: hidden;*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.right-content .point-cover{
+    width:100%;
+    height: 50px;
+    transition:height 1s ease-in-out;
+
+}
+.right-content .point-cover span{
+    position: relative;
+    top: -75px;
+    left:50%;
+    margin-left: -25px;
+    transition:top 1s ease-in-out;
+}
+.right-content .point-cover:hover span{
+    top: 50px;
+}
+.right-content .point-cover:hover{
+    height: 150px;
+}
+.articleList ul{
+    width:auto;
+    padding:0 50px;
+}
+.articleList ul li{
+    width:auto;
+    height: 250px;
+    padding: 10px 40px;
+    transition: 0.3s all ease-in-out;
+    margin: 30px 0;
+}
+.articleList h5{
+    font-size: 30px;
+    font-family: "Microsoft YaHei UI";
+    color: #03113c;
+}
+.articleList p{
+    font-size: 18px;
+    font-family: "Microsoft YaHei UI";
+    font-weight: lighter;
+    color: #03113c;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.articleList span{
+    font-family: "Microsoft YaHei UI";
+    font-size: 15px;
+    color: #03113c;
+}
+.articleList .col-lg-4{
+     margin-top: 10px;
+     height: 200px;
+     overflow: hidden;
+ }
+.articleList .col-lg-8{
+    margin-top: 30px;
+}
+.articleList div img{
+
+    float: right;
+}
+.articleList li:hover{
+    box-shadow: 0 0 10px 0 #03113c ;
+}
+.articleClass{
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    border: 2px solid #03113c;
+    background: #dbeafc;
+    margin: 10px auto 20px auto;
+    /*margin-top: 50px;*/
+    font-family: "Microsoft YaHei UI";
+    font-size: 15px;
+}
+.articleClass option{
+    font-family: "Microsoft YaHei UI";
+    font-size: 15px;
+    border: 1px solid #03113c;
+}
+.emptyMsg{
+    font-family: "Microsoft YaHei UI";
+    font-size: 35px;
+    color: #9d9d9d;
+    text-align: center;
+    margin-top:20%;
+}
+.articleList li a{
+    width:100%;
+    height:100%;
+    display: block;
+}

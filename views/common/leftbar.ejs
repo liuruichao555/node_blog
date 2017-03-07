@@ -1,0 +1,114 @@
+<!--登录框-->
+
+
+
+<div class="left-content col-lg-4" >
+</div>
+
+<script>
+    var loginUser = JSON.parse('<%=JSON.stringify(loginUser)%>')
+    console.log(loginUser)
+</script>
+<script type="text/template" id="user_template">
+    <div class="login"  id="login">
+        <div class="login-content" >
+            <div>
+                <a class="login-cancel"><img src="/img/Cancel.png" ></a>
+                <h2>登录</h2>
+                <input type="text" class='user-name' value="手机号/邮箱" id="user-name">
+                <input type="password" class='user-psd' >
+                <label class="login-tip" style="display: block; height: 20px;"></label>
+                <input type="submit" value="登录" id="login-commit" class="login-commit">
+                <a class="register-btn">注册</a>
+            </div>
+        </div>
+    </div>
+    <div class="register" id="register">
+        <div class="register-content" >
+            <div class='register-main'>
+                <a class="register-cancel"><img src="/img/Cancel.png" ></a>
+                <ul>
+                    <li style="border-right:none; border-radius:5px 0 0 5px; background-color: #03113c; color: #ffffff;"  id="reg">手机注册</li>
+                    <li style="border-radius: 0 5px 5px 0 ;" id="eml">邮箱注册</li>
+                </ul>
+                <div class="register-mobile" id="register-mobile">
+                    <div>
+                        <b>*</b>用户名　<input class="userName" type="text"><label class="userName-lab">请填写用户名</label>
+                        <b>*</b>手机号　<input class="phone-num" type="text"><label class="phoneNum-lab">请填写手机号码</label>
+                        <b>*</b>图片验证码<input class="pv-code" type="text"><img class="verification-code" src="http://localhost:3000/ccap/verifyCode"  width="95"><a class="code-fresh">看不清楚，换一张</a>
+                        <label class="verification-code-lab">请填写图片中的字符，不区分大小写</label>
+
+                        <b>*</b>短信验证码<input class="mobile-code" type="text" style="display: inline-block"><input type="button" class="mobile-btn" value="免费获取短信验证码"><label>请查收手机短信，并填写短信验证码</label>
+                        <b>*</b>密码　　<input class="userPassword" type="password"><label class="userPassword-lab">6~16个字符，区分大小写</label>
+
+                        <b>*</b>确认密码<input class="reUserPassword" type="password"><label class="reUserPassword-lab">请再次填写密码</label>
+                    </div>
+                    <input class="register-commit" type="submit">
+                    <label class="register-tip"></label>
+                </div>
+                <div class="register-email" id="register-email" style="display: none;">
+                    <div>
+                        <b>*</b>用户名　<input class="userName" type="text"><label class="userName-lab">请填写用户名</label>
+                        <b>*</b>邮箱　　<input class="email-num" type="text"><label class="emailNum-lab">请输入邮箱</label>
+                        <b>*</b>密码　　<input class="userPassword" type="password"><label class="userPassword-lab">6~16个字符，区分大小写</label>
+                        <b>*</b>确认密码<input class="reUserPassword" type="password"><label class="reUserPassword-lab">请再次填写密码</label>
+                    </div>
+                    <input class="register-commit" type="submit">
+                </div>
+            </div>
+            <div class="registerMessage" style="display: none;">
+                <h3>注册成功</h3>
+                <a>确定</a>
+            </div>
+
+        </div>
+    </div>
+
+    <@ if( status == "1" ) {@>
+    <@ console.log(status)@>
+    <div class="user-mode" id="user-mode">
+        <div class="mode-back" ><a class="user-btn"><img src="/img/1398.png" width="70"></a></div>
+        <ul>
+            <li><a><img src="/img/User-Profile.png" width="15">主页</a></li>
+            <li><a><img src="/img/Mail.png" width="15">私信</a></li>
+            <li><a><img src="/img/Setting.png" width="15">设置</a></li>
+            <li><a>退出登录</a></li>
+        </ul>
+    </div>
+    <@} else {@>
+        <div class="login-mode" id="login-mode"><a id="login-btn" style="cursor: pointer;">登</a></div>
+    <@}@>
+    <!--导航栏-->
+    <nav class="navbar">
+        <ul class="navbar-ul ">
+            <li class="navbar-li"><a href="/"><img src="/img/Home.png" width="20"></a></li>
+            <li class="navbar-li"><a href="/article/list"><img src="/img/Link.png" width="20"></a></li>
+            <li class="navbar-li"><a><img src="/img/Gallery.png" width="20"></a></li>
+            <li class="navbar-li"><a><img src="/img/Bookmark-(alt).png" width="20"></a></li>
+            <li class="navbar-li"><a><img src="/img/User-Profile.png" width="20"></a></li>
+        </ul>
+    </nav>
+    <!--左半部分-->
+    <div class="user-photo"><img src="/img/1398.png" width="100"></div>
+    <h3>西西谷的博客</h3>
+    <h5>Xixigu's Blog</h5>
+    <p class="user-introduce">西西谷是一个有梦想的人，西西谷有一个梦想，就是成为一个拯救世界的英雄，但是世界一直都很和平，西西谷空有一身抱负，却壮志未酬，所以西西谷决定去做一件事情。。。</p>
+    <div class="msg-board">
+        <h4>留言板</h4>
+        <ul class="msg-ul">
+            <li class="msg-li">
+                <a><span><img src="/img/1398.png" width="30"></span><b>小花花:</b></a>
+                <p>梦想总是要有的，不然人和咸鱼有什么区别，但是，要正视自己的梦想，哈哈哈哈哈，你说我说的对不对</p>
+            </li>
+            <li class="msg-li">
+                <a><span><img src="/img/1398.png" width="30"></span><b>小花花:</b></a>
+                <p>梦想总是要有的，不然人和咸鱼有什么区别，但是，要正视自己的梦想，哈哈哈哈哈，你说我说的对不对</p>
+            </li>
+            <li class="msg-li">
+                <a><span><img src="/img/1398.png" width="30"></span><b>小花花:</b></a>
+                <p>梦想总是要有的，不然人和咸鱼有什么区别，但是，要正视自己的梦想，哈哈哈哈哈，你说我说的对不对</p>
+            </li>
+        </ul>
+        <a class="msg-btn"><img src="/img/Write.png" width="20">留言板</a>
+    </div>
+</script>

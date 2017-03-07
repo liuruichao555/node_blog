@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="'description" content="Touch enabled minimalistic slider written in vanilla JavaScript">
+    <meta name="viewport" content="'width=device-width,initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+    <script src="/javascript/jquery-3.1.1.js"></script>
+    <script src="/javascript/bootstrap.js"></script>
+    <link href="/img/logo.ico" rel="icon" type="image/x-icon">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/articleListCss.css" rel="stylesheet">
+    <link href="/css/public.css" rel="stylesheet">
+</head>
+<body>
+<section class="container-fluid">
+    <div class="row">
+        <%include ./common/leftbar.ejs %>
+        <div class="right-content col-lg-8">
+            <div class="point-cover"><span><a href="/article/publish"><img src="/img/Add.png" ></a></span></div>
+            <div class="articleList">
+                <select class="articleClass">
+                    <option value="0">全部</option>
+                <% articleClasses.forEach(function(articleClass){ %>
+                    <option><%=articleClass.className%></option>
+                    <%});%>
+                </select>
+                <%if (articles.length ==0){%>
+                <div class = 'emptyMsg'>快来添加文章吧~~</div>
+                <%}%>
+                <ul>
+                    <% for(var i=articles.length-1; i>=0; i--){%>
+                    <li>
+                        <a href=<%='/article/content?id='+articles[i]._id%>>
+                            <div class="col-lg-8">
+                                <h5><%=articles[i].articleTitle%></h5>
+                                <p><%=articles[i].articleContent%></p>
+                                </br>
+                                <%if(parseInt(Math.abs(today.getTime()  -  articles[i].articleDate.getTime())/ 1000/ 60/ 60/ 24)!=0){%>
+                                <span><%=parseInt(Math.abs(today.getTime()  -  articles[i].articleDate.getTime())/ 1000/ 60/ 60/ 24)%>天前发布 | <%=articles[i].articleClass%> | 90条评论</span>
+                                <%} else if (parseInt(Math.abs(today.getTime()  -  articles[i].articleDate.getTime())/ 1000/ 60/ 60)!=0){%>
+                                <span><%=(parseInt(Math.abs(today.getTime()  -  articles[i].articleDate.getTime())/ 1000/ 60/ 60))%>小时前发布 | <%=articles[i].articleClass%> | 90条评论</span>
+                                <%}else if((parseInt(Math.abs(today.getTime()  -  articles[i].articleDate.getTime())/ 1000/ 60)) != 0){%>
+                                <span><%=(parseInt(Math.abs(today.getTime()  -  articles[i].articleDate.getTime())/ 1000/ 60))%>分钟前发布 | <%=articles[i].articleClass%> | 90条评论</span>
+                                <%}else{%>
+                                <span>刚刚发布 | <%=articles[i].articleClass%> | 90条评论</span>
+                                <%}%>
+                            </div>
+                            <div class="col-lg-4">
+                                <img src="/img/thecat.jpg" width="300">
+                            </div>
+                        </a>
+
+                    </li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="/javascript/articleListJs.js"></script>
+<script src="/javascript/register.js"></script>
+<script src="/javascript/login.js"></script>
+</body>
+</html>
